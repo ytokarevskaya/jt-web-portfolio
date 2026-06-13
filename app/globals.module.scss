@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  // palette
+  --dark-green: #1F3E36;
+  --green: #61877B;
+  --light-green: #F2F4F3;
+  --light-beige: #F8F5F3;
+  --beige: #EFE9E4;
+  --white: #FFFFFF;
+
+  // spacing
+  --space-xl: 64px;
+  --space-l: 32px;
+  --space-m: 24px;
+  --space-s: 16px;
+  --space-xs: 8px;
+}
+
+// typography
+@mixin heading {
+  font-weight: normal;
+  font-size: 16px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+@mixin h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+@mixin h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@mixin h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--green);
+}
+
+@mixin paragraph {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--dark-green);
+}
+
+@mixin button {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 11px;
+    background-image: url('/img/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: var(--space-xs);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: translateX(6px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--dark-green);
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.heading {
+  @include heading;
+}
+
+.h1 {
+  @include h1;
+}
+
+.h2 {
+  @include h2;
+}
+
+.h3 {
+  @include h3;
+}
+
+.paragraph {
+  @include paragraph;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-l) var(--space-xl);
+  background-color: var(--light-beige);
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+
+  li a {
+    @include paragraph;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      margin-top: 2px;
+      background-color: var(--green);
+    }
+
+    &:hover::after { 
+      width: 100%;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
+.hero {
+  padding: 0 var(--space-xl);
+  background-color: var(--light-beige);
+  background-image: url('/img/circles.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 600px;
+  height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroContent {
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  margin-bottom: var(--space-xl);
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--green);
+}
+
+.heroFooter {
+  width: 50vw;
+  margin-bottom: var(--space-xl);
+}
+
+.services {
+  display: flex;
+  gap: var(--space-s) var(--space-m);
+  margin: var(--space-m) 0;
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+
+  li {
+    background-color: var(--beige);
+    border-radius: 6px;
+    padding: var(--space-xs) var(--space-s);
+  }
+}
+
+.portfolio {
+  padding: var(--space-l) var(--space-xl);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: 0 var(--space-m);
+}
+
+.projectCard {
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: var(--space-m);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.projectGallery {
+  width: 45%;
+  flex-shrink: 0;
+
+  .mainImage {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+  }
+}
+
+.projectCardDivider {
+  width: 1px;
+  height: stretch;
+  background-color: var(--beige);
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.projectDescription {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-s);
+
+  ul {
+    margin: 0;
+    padding-left: var(--space-m);
+  }
+
+  a {
+    @include button;
+    text-decoration: none;
+  }
+}
+
+.contact {
+  background-color: var(--light-green);
+  padding: var(--space-l) var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactText {
+  margin-left: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 330px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    a {
+      color: var(--dark-green);
+    }
+
+    a:visited {
+      color: var(--dark-green);}
+  }
+}
+
+.contactForm {
+  width: 470px;
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-right: var(--space-l);
+  padding: var(--space-m);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  .inputs {
+    display: flex;
+    gap: var(--space-m);
+
+    input {
+      flex: 1;
+      padding: var(--space-s);
+      border: 1px solid var(--beige);
+      border-radius: 6px;
+    }
+  }
+
+  .textarea {
+    padding: var(--space-s);
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    resize: none;
+  }
+
+  input, textarea {
+      font-family: 'Lato', Arial, Helvetica, sans-serif;
+      transition: border-color 0.3s ease;
+
+      &::placeholder {
+        color: gray;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--green);
+      }
+    }
+
+  .submitButton {
+    @include button;
+    align-self: center;
+  }
+}
+
+.pageFooter {
+  background-color: var(--dark-green);
+  padding: var(--space-l) 0;
+  text-align: center;
+
+  p {
+    color: var(--light-green);
+    font-size: 14px;
+  }
+}
