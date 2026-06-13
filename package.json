@@ -12,6 +12,10 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "engines": {
+    "node": "21.7.3",
+    "npm": "10.5.0"
+  },
   "dependencies": {
     "classnames": "^2.5.1",
     "next": "16.2.9",

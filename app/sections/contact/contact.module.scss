@@ -1,0 +1,90 @@
+@use "../../globals.module.scss" as *;
+
+.contact {
+  background-color: var(--light-green);
+  padding: var(--space-l) var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactText {
+  margin-left: var(--space-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  width: 330px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    a {
+      color: var(--dark-green);
+    }
+
+    a:visited {
+      color: var(--dark-green);}
+  }
+}
+
+.contactForm {
+  width: 470px;
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-right: var(--space-l);
+  padding: var(--space-m);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  .inputs {
+    display: flex;
+    gap: var(--space-m);
+
+    input {
+      flex: 1;
+      padding: var(--space-s);
+      border: 1px solid var(--beige);
+      border-radius: 6px;
+    }
+  }
+
+  .textarea {
+    padding: var(--space-s);
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    resize: none;
+  }
+
+  input, textarea {
+      font-family: 'Lato', Arial, Helvetica, sans-serif;
+      transition: border-color 0.3s ease;
+
+      &::placeholder {
+        color: gray;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--green);
+      }
+    }
+
+  .submitButton {
+    @include button;
+    align-self: center;
+  }
+}
+

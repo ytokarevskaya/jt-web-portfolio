@@ -1,0 +1,42 @@
+@use "../../globals.module.scss" as *;
+
+.hero {
+  padding: 0 var(--space-xl);
+  background-color: var(--light-beige);
+  background-image: url('/img/circles.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 600px;
+  height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.heroContent {
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  margin-bottom: var(--space-xl);
+}
+
+.heroFooter {
+  width: 50vw;
+  margin-bottom: var(--space-xl);
+}
+
+.services {
+  display: flex;
+  gap: var(--space-s) var(--space-m);
+  margin: var(--space-m) 0;
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+
+  li {
+    background-color: var(--beige);
+    border-radius: 6px;
+    padding: var(--space-xs) var(--space-s);
+  }
+}

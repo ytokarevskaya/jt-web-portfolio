@@ -1,0 +1,116 @@
+@use "../../globals.module.scss" as *;
+
+.portfolio {
+  padding: var(--space-l) var(--space-xl);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding: 0 var(--space-m);
+}
+
+.projectCard {
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: var(--space-m);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.projectGallery {
+  width: 45%;
+  flex-shrink: 0;
+
+  .mainImage {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+  }
+}
+
+.projectCardDivider {
+  width: 1px;
+  height: stretch;
+  background-color: var(--beige);
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.projectDescription {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-s);
+
+  ul {
+    margin: 0;
+    padding-left: var(--space-m);
+  }
+
+  a {
+    @include button;
+    text-decoration: none;
+  }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(248 245 243 / 85%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  cursor: pointer;
+}
+
+.overlayContent {
+  background-color: var(--white);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.galleryButton {
+  width: 35px;
+  height: 20px;
+  background-image: url('/img/arrow.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+
+  &.left {
+    transform: rotate(180deg);
+  }
+}
+
+.galleryImage {
+  border-radius: 6px;
+}
+
+.imageText {
+  @include paragraph;
+  text-align: center;
+}
