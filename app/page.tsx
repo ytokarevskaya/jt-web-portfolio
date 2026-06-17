@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className={css.wrapper}>
       <header className={css.header}>
-        <Image src="/img/logo.svg" alt="Logo" className={css.logo} width={124} height={38} />
+        <Image src="img/logo.svg" alt="Logo" className={css.logo} width={124} height={38} />
         <nav>
           <ul className={css.nav}>
             <li><a href="#hero">O mně</a></li>

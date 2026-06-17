@@ -12,19 +12,19 @@ export default function ContactSection() {
           <p className={css.paragraph}>Napište mi pár vět o projektu a já se vám ozvu zpět</p>
           <div className={css.links}>
             <div className={css.link}>
-              <Image src="/img/email.svg" alt="Email icon" width={18} height={18} />
+              <Image src="img/email.svg" alt="Email icon" width={18} height={18} />
               <a href="mailto:j.linsher.jz@gmail.com">
                 j.linsher.jz@gmail.com
               </a>
             </div>
             <div className={css.link}>
-              <Image src="/img/linkedin.svg" alt="Linkedin icon" width={18} height={18} />
+              <Image src="img/linkedin.svg" alt="Linkedin icon" width={18} height={18} />
               <a href="https://www.linkedin.com/in/julia-tokarevskaia" target="_blank" rel="noopener noreferrer">
                 linkedin.com/in/julia-tokarevskaia
               </a>
             </div>
             <div className={css.link}>
-              <Image src="/img/github.svg" alt="Github icon" width={18} height={18} />
+              <Image src="img/github.svg" alt="Github icon" width={18} height={18} />
               <a href="https://github.com/ytokarevskaya" target="_blank" rel="noopener noreferrer">
                 github.com/ytokarevskaya
               </a>

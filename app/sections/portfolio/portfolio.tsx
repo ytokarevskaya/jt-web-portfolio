@@ -65,7 +65,7 @@ export default function PortfolioSection() {
               <div className={css.projectGallery}>
                 <div className={classnames(css.galleryImage, css.mainImage)} onClick={() => handleImageClick(project.id, 0)} style={{backgroundImage: `url(${project.images[0].path})`}}>
                   <div className={css.hoverOverlay}>
-                    <Image className={css.magnifier} src="/img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
+                    <Image className={css.magnifier} src="img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
                   </div>
                 </div>
                 {project.images.length > 1 && (
@@ -73,7 +73,7 @@ export default function PortfolioSection() {
                     {project.images.slice(1, 4).map((image, index) => (
                       <div key={index} onClick={() => handleImageClick(project.id, index + 1)} className={classnames(css.galleryImage, css.previewImage)} style={{backgroundImage: `url(${image.path})`}}>
                         <div className={css.hoverOverlay}>
-                          <Image className={css.magnifier} src="/img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
+                          <Image className={css.magnifier} src="img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
                         </div>
                       </div>
                     ))}
