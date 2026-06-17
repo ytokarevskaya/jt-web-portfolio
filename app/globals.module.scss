@@ -29,12 +29,20 @@
   margin: 0;
   font-weight: bold;
   font-size: 32px;
+
+  @media screen and (max-width: 680px) {
+    font-size: 24px;
+  }
 }
 
 @mixin h2 {
   margin: 0;
   font-weight: bold;
   font-size: 24px;
+
+  @media screen and (max-width: 680px) {
+    font-size: 18px;
+  }
 }
 
 @mixin h3 {
@@ -42,6 +50,10 @@
   font-weight: bold;
   font-size: 18px;
   color: var(--green);
+
+  @media screen and (max-width: 680px) {
+    font-size: 16px;
+  }
 }
 
 @mixin paragraph {
@@ -50,6 +62,10 @@
   font-size: 18px;
   line-height: 1.5;
   color: var(--dark-green);
+
+  @media screen and (max-width: 680px) {
+    font-size: 16px;
+  }
 }
 
 @mixin button {
@@ -61,6 +77,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @media screen and (max-width: 680px) {
+    font-size: 16px;
+  }
 
   &::after {
     content: '';
@@ -126,6 +146,15 @@ body {
   background-color: var(--light-beige);
   position: sticky;
   top: 0;
+  z-index: 1;
+
+  @media screen and (max-width: 1280px) {
+    padding: var(--space-l);
+  }
+
+  @media screen and (max-width: 680px) {
+    padding: var(--space-m);
+  }
 }
 
 .nav {
@@ -134,6 +163,10 @@ body {
   align-items: center;
   list-style-type: none;
   margin: 0;
+
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
 
   li a {
     @include paragraph;

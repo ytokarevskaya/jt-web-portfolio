@@ -5,6 +5,16 @@
   padding: var(--space-l) var(--space-xl);
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 1280px) {
+    flex-wrap: wrap;
+    gap: var(--space-l);
+    padding: var(--space-l);
+  }
+
+  @media screen and (max-width: 680px) {
+    padding: var(--space-l) var(--space-m);
+  }
 }
 
 .contactText {
@@ -13,6 +23,11 @@
   flex-direction: column;
   gap: var(--space-m);
   width: 330px;
+
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .links {
@@ -39,9 +54,15 @@
   width: 470px;
   background-color: var(--white);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   border-radius: 6px;
   margin-right: var(--space-l);
   padding: var(--space-m);
+
+  @media screen and (max-width: 1280px) {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .form {
@@ -52,6 +73,10 @@
   .inputs {
     display: flex;
     gap: var(--space-m);
+
+    @media screen and (max-width: 680px) {
+      flex-wrap: wrap;
+    }
 
     input {
       flex: 1;
