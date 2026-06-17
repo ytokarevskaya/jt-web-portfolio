@@ -31,7 +31,7 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-        <div className={css.contactForm}>
+        {/* <div className={css.contactForm}>
           <form className={css.form}>
             <div className={css.inputs}>
               <input type="text" id="name" name="name" autoComplete="name" required placeholder="Vaše jméno" />
@@ -40,7 +40,7 @@ export default function ContactSection() {
             <textarea className={css.textarea} id="message" name="message" rows={5} required placeholder="Popište prosím svůj projekt..."></textarea>
             <button type="submit" className={css.submitButton}>Odeslat zprávu</button>
           </form>
-        </div>
+        </div> */}
       </section>
     )
 }
