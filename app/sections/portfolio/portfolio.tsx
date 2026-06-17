@@ -29,12 +29,14 @@ function ImageGallery ({activeProject, setActiveId, closeGallery, activeId = 0}:
 
   return (
     <div className={css.overlay} onClick={closeGallery}>
-      <div className={classnames(css.galleryButton, css.left)} onClick={showPreviousImage} />
       <div className={css.overlayContent}>
-        <Image className={css.galleryImage} src={images[activeId].path} alt={images[activeId].text} width={960} height={520} />
+        <Image className={css.fullImage} src={images[activeId].path} alt={images[activeId].text} width={960} height={520} />
         <p className={css.imageText}>{images[activeId].text}</p>
       </div>
-      <div className={css.galleryButton} onClick={showNextImage} />
+      <div className={css.buttons}>
+        <div className={classnames(css.galleryButton, css.left)} onClick={showPreviousImage} />
+        <div className={css.galleryButton} onClick={showNextImage} />
+      </div>
     </div>
   )
 }
@@ -61,9 +63,22 @@ export default function PortfolioSection() {
           {PROJECTS.map((project) => (
             <div key={project.id} className={css.projectCard}>
               <div className={css.projectGallery}>
-                <div className={css.mainImage} onClick={() => handleImageClick(project.id, 0)}>
-                  <Image src={project.images[0].path} alt={project.name} width={594} height={350} />
+                <div className={classnames(css.galleryImage, css.mainImage)} onClick={() => handleImageClick(project.id, 0)} style={{backgroundImage: `url(${project.images[0].path})`}}>
+                  <div className={css.hoverOverlay}>
+                    <Image className={css.magnifier} src="/img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
+                  </div>
                 </div>
+                {project.images.length > 1 && (
+                  <div className={css.previews}>
+                    {project.images.slice(1, 3).map((image, index) => (
+                      <div key={index} onClick={() => handleImageClick(project.id, index + 1)} className={classnames(css.galleryImage, css.previewImage)} style={{backgroundImage: `url(${image.path})`}}>
+                        <div className={css.hoverOverlay}>
+                          <Image className={css.magnifier} src="/img/magnifier.svg" alt="Magnifying Glass" width={54} height={54} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className={css.projectCardDivider} />
               <div className={css.projectDescription}>
