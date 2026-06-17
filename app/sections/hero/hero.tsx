@@ -6,8 +6,8 @@ export default function HeroSection() {
         <section className={css.hero} id="hero">
         <main className={css.heroContent}>
           <div className={css.heading}>O mně</div>
-          <h1 className={css.h1}>Tvořím moderní weby, které přinášejí výsledky</h1>
-          <p className={css.paragraph}>Pomáhám firmám a podnikatelům s tvorbou webových stránek od nuly, jejich úpravami a rozvojem. Spojuji technické řešení, čistý design a promýšlenou strukturu.</p>
+          <h1 className={css.h1}>Partner pro váš webový projekt</h1>
+          <p className={css.paragraph}>Ahoj, jsem Julia. Pomáhám podnikatelům a firmám s tvorbou, správou a rozvojem webů a e-shopů – od prvního nápadu až po každodenní provoz.</p>
           <div className={css.divider} />
         </main>
         <footer className={css.heroFooter}>
